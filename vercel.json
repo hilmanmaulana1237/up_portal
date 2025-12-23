@@ -1,6 +1,8 @@
 {
     "version": 2,
     "framework": null,
+    "installCommand": "echo 'Skip install - pre-built assets'",
+    "buildCommand": "echo 'Skip build - pre-built assets'",
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.7.2"
