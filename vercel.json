@@ -12,19 +12,23 @@
     "routes": [
         {
             "src": "/build/(.*)",
-            "dest": "/public/build/$1"
+            "dest": "/build/$1"
         },
         {
             "src": "/storage/(.*)",
-            "dest": "/public/storage/$1"
+            "dest": "/storage/$1"
         },
         {
             "src": "/favicon.ico",
-            "dest": "/public/favicon.ico"
+            "dest": "/favicon.ico"
         },
         {
             "src": "/robots.txt",
-            "dest": "/public/robots.txt"
+            "dest": "/robots.txt"
+        },
+        {
+            "src": "/(css|js|images|fonts)/(.*)$",
+            "dest": "/$1/$2"
         },
         {
             "src": "/(.*)",
