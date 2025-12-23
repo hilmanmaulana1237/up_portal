@@ -1,9 +1,6 @@
 {
     "version": 2,
     "framework": null,
-    "installCommand": "echo 'Skipping install - using pre-built assets'",
-    "buildCommand": "echo 'Skipping build - using pre-built assets'",
-    "outputDirectory": "public",
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.7.2"
@@ -12,23 +9,38 @@
     "routes": [
         {
             "src": "/build/(.*)",
-            "dest": "/build/$1"
+            "headers": {
+                "Cache-Control": "public, max-age=31536000, immutable"
+            },
+            "dest": "/public/build/$1"
         },
         {
             "src": "/storage/(.*)",
-            "dest": "/storage/$1"
+            "dest": "/public/storage/$1"
         },
         {
             "src": "/favicon.ico",
-            "dest": "/favicon.ico"
+            "dest": "/public/favicon.ico"
         },
         {
             "src": "/robots.txt",
-            "dest": "/robots.txt"
+            "dest": "/public/robots.txt"
         },
         {
-            "src": "/(css|js|images|fonts)/(.*)$",
-            "dest": "/$1/$2"
+            "src": "/manifest.json",
+            "dest": "/public/manifest.json"
+        },
+        {
+            "src": "/sw.js",
+            "dest": "/public/sw.js"
+        },
+        {
+            "src": "/offline.html",
+            "dest": "/public/offline.html"
+        },
+        {
+            "src": "^/(.+\\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))$",
+            "dest": "/public/$1"
         },
         {
             "src": "/(.*)",
