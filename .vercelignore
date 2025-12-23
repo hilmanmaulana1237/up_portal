@@ -1,4 +1,4 @@
-/vendor
+# /vendor - MUST be deployed for PHP to work
 /node_modules
 /public/hot
 /public/storage

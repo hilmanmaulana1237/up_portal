@@ -5,7 +5,7 @@
 /public/storage
 /storage/*.key
 /storage/pail
-/vendor
+# /vendor  # Commented out - we need vendor for Vercel
 .env
 .env.backup
 .env.production
